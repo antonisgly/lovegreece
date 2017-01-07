@@ -1,0 +1,21 @@
+.btn-darkgray, .btn-darkgray:visited, .btn-darkgray:hover, .btn-darkgray:focus{
+    background-color: $darkgray-bg;
+    color: $white;
+    @include border-radius(2px);
+}
+
+.btn-lightgray {
+    background-color: $lightgray-bg;
+    color: $black;
+    @include border-radius(2px);
+}
+
+.btn-small {
+    padding: 5px 20px;
+    font-size: $small;
+}
+
+.btn-large {
+    padding: 5px 40px;
+    font-size: $bigger;
+}

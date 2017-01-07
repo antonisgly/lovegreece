@@ -1,0 +1,228 @@
+@import 'mixins', 'vars', 'buttons', 'fonts';
+
+/*----------------------
+GENERAL STYLES / CLASSES
+----------------------*/
+* {
+  font-family: $open-sans;
+}
+
+a, a:hover, a:active, a:visited {
+  color: $white;
+  text-decoration: underline;
+}
+
+li {
+  list-style: none;
+}
+
+.full {
+  width: $full-width;
+  margin: $auto-margin;
+  position: relative;
+}
+
+.site-title {
+  color: $white;
+  font-size: $big;
+  text-decoration: none;
+}
+
+.content-title {
+  font-weight: 600;
+}
+
+.content-subtitle {
+
+}
+
+.img-resp {
+  width: 100%;
+  margin: auto;
+}
+
+/*------------------
+      NAVBAR
+------------------*/
+.navbar {
+  padding: 1%;
+  background-color: $darkgray-bg;
+  border: none;
+  @include border-radius(0px);
+  margin: $zero-margin;
+  color: $white;
+}
+
+.navbar {
+  .container {
+    position: relative;
+  }
+}
+
+.navbar-right {
+  .navbar-text {
+    margin-right: $zero-margin;
+    margin-left: 20px;
+  }
+  .btn {
+    float: right;
+    margin-left: 10px;
+    @extend .btn-small;
+    @include less-than-768 {
+      float:left;
+      margin: 10px 10px 10px 20px;
+    }
+  }
+}
+
+.icon-bar {
+  background-color: $white;
+}
+
+.navbar-header {
+  @include more-than-768 {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    @include translateY(-50%);
+  }
+}
+
+/*------------------
+      CAROUSEL
+------------------*/
+.carousel-bullet {
+  width: 8px;
+  height: 8px;
+  border: none;
+  margin: $zero-margin 4px;
+}
+
+.carousel-indicators {
+  .carousel-bullet {
+    background-color: $darkgray-bg;
+  }
+  .carousel-bullet.active {
+    background-color: $black-bg;
+  }
+}
+
+.form {
+  background-color: $white;
+  padding: 20px;
+  width: 300px;
+  z-index: 999;
+  @include more-than-768 {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    @include translateXY(-10%, -50%);
+  }
+  button {
+    width: 100%;
+  }
+}
+
+.form-group:nth-child(n+2){
+  display: inline-block;
+  width: 45%;
+}
+
+.form-group:nth-child(2) {
+  float: left;
+}
+
+.form-group:nth-child(3) {
+  float: right;
+}
+
+.form-control, .form-control:focus {
+  background-color: $gray-bg;
+  @include border-radius(2px);
+  @include box-shadow(none);
+  border: 0px;
+}
+
+/*----------------------
+FANTASTIC PLACES TO STAY
+----------------------*/
+.fp-to-stay-wrapper {
+  padding: 30px 0px;
+  background-color: $lightgray-bg;
+  h4 {
+    margin-bottom: 20px;
+  }
+}
+
+.fp-to-stay-post {
+  padding: 15px 0px;
+  background-color: $white;
+  margin-top: 20px;
+  .row {
+    @include less-than-768 {
+      margin: 0px;
+    }
+    @include more-than-768 {
+      :nth-child(-n+2) {
+        display: inline-block;
+        max-width: 60%;
+        word-wrap: break-word;
+        margin: 10px;
+      }
+      :nth-child(2) {
+        float: right;
+      }
+    }
+    @include less-than-768 {
+      :nth-child(-n+2) {
+        word-wrap: break-word;
+        margin: 8px;
+      }
+    }
+
+  }
+}
+
+/*------------------
+     GOOGLE MAP
+------------------*/
+.gmap {
+  width: $full-width;
+  border: none;
+  height: 480px;
+  @include less-than-768 {
+    height: 200px;
+  }
+}
+
+/*------------------
+       FOOTER
+------------------*/
+.footer-wrapper {
+  background-color: $darkgray-bg;
+  color: $white;
+  padding: 30px 0px;
+}
+
+.list {
+  @include more-than-768 {
+    -webkit-padding-start: 0px;
+  }
+}
+
+.copyrights {
+  margin-top: 30px;
+  font-size: $small;
+  padding: inherit;
+  p:nth-child(1) {
+    float: left;
+  }
+  p:nth-child(2) {
+    float: right;
+  }
+  @include less-than-768 {
+    p:nth-child(2) {
+      float: left;
+    }
+  }
+}
